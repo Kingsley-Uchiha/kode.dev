@@ -1,0 +1,60 @@
+[Your Name]
+[Address, City, State, ZIP Code]
+[Phone Number]
+[Email Address]
+
+Objective:
+Highly motivated and detail-oriented individual seeking a frontend development internship to apply and enhance technical skills in a professional setting. Passionate about creating user-friendly and visually appealing web applications to deliver exceptional user experiences.
+
+Summary of Qualifications:
+- Proficient in HTML, CSS, and JavaScript, with a focus on creating responsive and accessible web applications.
+- Familiarity with frontend frameworks such as React and Vue.js.
+- Experience in version control using Git and GitHub.
+- Strong problem-solving and debugging skills.
+- Excellent collaboration and communication abilities.
+
+Education:
+[Bachelor's/Master's Degree] in [Field of Study]
+[University Name], [City, State]
+[Year of Graduation]
+
+Technical Skills:
+- Programming Languages: HTML5, CSS3, JavaScript
+- Frameworks/Libraries: React, Vue.js
+- Version Control: Git, GitHub
+- Responsive Web Design
+- Cross-Browser Compatibility
+- Debugging and Troubleshooting
+
+Experience:
+
+[Company Name], [Location]
+[Position Title]
+[Dates]
+
+- Developed and maintained responsive web applications using HTML, CSS, and JavaScript.
+- Collaborated with cross-functional teams to implement frontend functionalities and ensure seamless user experiences.
+- Assisted in the debugging and troubleshooting of frontend issues to optimize performance and user satisfaction.
+- Implemented version control using Git, contributing to efficient collaboration and code management.
+
+Projects:
+
+1. [Project Title]
+   - Developed a responsive website using HTML, CSS, and JavaScript, ensuring cross-browser compatibility and accessibility.
+   - Utilized React framework to enhance interactivity and create dynamic user interfaces.
+   - Collaborated with a team of designers and developers, following agile methodologies for timely project completion.
+
+2. [Project Title]
+   - Created a single-page application using Vue.js, integrating APIs to display real-time data.
+   - Implemented responsive design principles and optimized performance for a smooth user experience.
+   - Utilized Git for version control, facilitating seamless collaboration with team members.
+
+Additional Skills:
+- Strong attention to detail and ability to follow design specifications.
+- Familiarity with UI/UX principles and best practices.
+- Proficient in using development tools and IDEs such as Visual Studio Code and Sublime Text.
+- Excellent problem-solving and analytical skills.
+- Effective communication and teamwork abilities.
+
+References:
+Available upon request
