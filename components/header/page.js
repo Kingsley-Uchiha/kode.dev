@@ -21,7 +21,7 @@ export default function Header() {
       <div className="txt">
         <h1 className="text-2xl font-medium font-special">
           Hello{" "}
-          <span className="pl-1 text-black rounded bg-white-100">World</span>
+          <span className="pl-1 text-black rounded bg-white-100 anime-head">World</span>
         </h1>
         <p className="my-2 font-regular opacity-80 font-italic text-md">
           I'm a frontend web developer
