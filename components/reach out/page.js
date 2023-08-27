@@ -16,7 +16,6 @@ export default function ReachOut() {
       email,
       message
     }
-    // console.log(myEmail);
 
     emailjs
       .send(
