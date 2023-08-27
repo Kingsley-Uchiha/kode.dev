@@ -125,7 +125,6 @@ export default function ReachOut() {
           </div>
         </div>
         <form
-          action="Sike"
           className="form flex-col flex-1 items-end justify-end relative"
           id="my-form"
           onSubmit={sendEmail}

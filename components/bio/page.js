@@ -33,7 +33,7 @@ export default function Bio() {
             <li>Debugging and Troubleshooting</li>
           </ul>
           <br />
-          <Button text="Download CV" alt="Download CV" />
+          <Button text="Download CV" alt="Download CV" href="" download />
         </div>
       </div>
     </div>
