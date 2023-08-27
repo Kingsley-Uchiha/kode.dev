@@ -114,7 +114,7 @@ export default function ReachOut() {
                   alt="X (Twitter)"
                 />
               </Link>
-              <Link href="">
+              <Link href="https://www.linkedin.com/in/kingsley-ibhasebhor-43306b232/">
                 <Image
                   src="/social/In.png"
                   width={40}
