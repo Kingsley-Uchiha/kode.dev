@@ -381,3 +381,10 @@ body {
     transform: perspective(900px) rotateY(0deg);
   }
 }
+
+
+/* ** Contact ** */
+
+.form-submit {
+  transform: translateY(calc(-100% - 20px));
+}

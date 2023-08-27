@@ -1,12 +1,40 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useState } from "react";
+import emailjs from '@emailjs/browser';
 
 
 export default function ReachOut() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+
+  const sendEmail = e => {
+    e.preventDefault();
+    const myEmail = {
+      name,
+      email,
+      message
+    }
+    // console.log(myEmail);
+
+    emailjs
+      .send(
+        process.env.NEXT_PUBLIC_YOUR_SERVICE_ID,
+        process.env.NEXT_PUBLIC_YOUR_TEMPLATE_ID,
+        myEmail
+      )
+      .then(
+        (result) => {
+          console.log(result.status, result.text);
+          console.log(process.env);
+        },
+        (error) => {
+          console.log(error);
+          console.log(process.env);
+        }
+      );
+  }
 
   return (
     <div className="px-20 py-10">
@@ -70,20 +98,37 @@ export default function ReachOut() {
             </h3>
             <div className="links flex gap-5 mt-5 items-center">
               <Link href="https://github.com/Kingsley-Uchiha">
-                <Image src="/social/GitHub.png" width={40} height={40} alt="GitHub" />
+                <Image
+                  src="/social/GitHub.png"
+                  width={40}
+                  height={40}
+                  alt="GitHub"
+                />
               </Link>
               <Link href="https://twitter.com/Kingsley_Uchiha">
-                <Image src="/social/X.png" width={40} height={40} alt="X (Twitter)" />
+                <Image
+                  src="/social/X.png"
+                  width={40}
+                  height={40}
+                  alt="X (Twitter)"
+                />
               </Link>
               <Link href="">
-                <Image src="/social/In.png" width={40} height={40} alt="LinkedIn" />
+                <Image
+                  src="/social/In.png"
+                  width={40}
+                  height={40}
+                  alt="LinkedIn"
+                />
               </Link>
             </div>
           </div>
         </div>
         <form
           action="Sike"
-          className="form flex-col flex-1 items-end justify-end"
+          className="form flex-col flex-1 items-end justify-end relative"
+          id="my-form"
+          onSubmit={sendEmail}
         >
           <div className="flex gap-5 justify-between text-md font-thin">
             <label htmlFor="name" className="mt-1">
@@ -127,9 +172,9 @@ export default function ReachOut() {
               className="w-3/4 py-1 px-2 bg-white-20 rounded-md outline-none resize-none border-none font-thin text-md"
             ></textarea>
           </div>
-          {/* <button className="outline-none bg-white-20 text-white py-2 px-8 rounded-md">
+          <button className="outline-none bg-white-20 text-white font-thin py-2 px-8 rounded-md absolute right-5 form-submit backdrop-blur-md">
             Send &gt;
-          </button> */}
+          </button>
         </form>
       </div>
     </div>
