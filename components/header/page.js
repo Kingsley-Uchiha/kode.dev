@@ -72,7 +72,7 @@ export default function Header() {
           Need my help on a project?
         </p>
         {/* pur color */}
-        <Button text="Reach Out" alt="Contact me" href="#my-form" />
+        <Button text="Reach Out" alt="Contact me" href="#reach-out" scroll={true} />
       </div>
       <div className="hero pr-5 relative">
         <Cube />

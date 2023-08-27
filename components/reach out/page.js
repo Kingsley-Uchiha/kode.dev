@@ -37,7 +37,7 @@ export default function ReachOut() {
   }
 
   return (
-    <div className="px-20 py-10">
+    <div className="px-20 py-10" id="reach-out">
       <h1 className="text-xl font-medium font-special">
         Reach{" "}
         <span className="pb-2 pr-2 text-black rounded bg-white-100">Out</span>

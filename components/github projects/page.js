@@ -1,6 +1,19 @@
 import Link from 'next/link';
+import { Octokit } from "octokit";
 
 export default function GithubProjects() {
+  const octokit = new Octokit({
+    auth: process.env.NEXT_PUBLIC_GITHUB_TOKEN,
+  });
+
+  const getRepos = async () => {
+    await octokit.request("GET /repos/{owner}/{repo}/issues", {
+      owner: "github",
+      repo: "docs",
+      per_page: 3,
+    });
+  }
+  
   return (
     <div className="github-repos p-20">
       <div className="top-bar flex gap-8 items-center">
