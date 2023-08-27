@@ -22,7 +22,8 @@ export default function ReachOut() {
       .send(
         process.env.NEXT_PUBLIC_YOUR_SERVICE_ID,
         process.env.NEXT_PUBLIC_YOUR_TEMPLATE_ID,
-        myEmail
+        myEmail,
+        process.env.NEXT_PUBLIC_YOUR_PUBLIC_KEY
       )
       .then(
         (result) => {
