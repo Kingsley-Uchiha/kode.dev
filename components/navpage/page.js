@@ -2,8 +2,12 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 export default function NavPage() {
+  const linkHover = () => {
+
+  }
+
   return (
-    <div className="navpage top-full absolute bg-black">
+    <div className="navpage top-full absolute bg-black ">
       <ul className="text-lg font-regular absolute left-1/3 -translate-x-1/2 links flex flex-col p-32 list-disc">
         <li>
           <Link href="#">Home</Link>

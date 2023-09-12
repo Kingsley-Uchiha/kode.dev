@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useState } from "react";
 import Button from "../button/page";
 import Cube from "../cube/page";
+import Tooltip from "../tooltip/page";
 
 
 export default function Header() {
@@ -13,6 +14,10 @@ export default function Header() {
 
   const editCode = () => {
     setInputActive(!inputActive);
+    runCode(funcVar);
+  }
+  const runCode = (log) => {
+    if(inputActive) console.log(log);
   }
 
   return (
@@ -27,6 +32,7 @@ export default function Header() {
         </p>
         {/* * Code. Move out */}
         {/* * Edit only one line */}
+        <Tooltip>I am a Tooltip</Tooltip>
         <div className="px-10 py-5 rounded-lg code-area font-code bg-white-20 w-30 font-light relative">
           <div className={`${inputActive ? "blur-self" : ""} text`}>
             <span className="italic opacity-50">// function decleration</span>{" "}
