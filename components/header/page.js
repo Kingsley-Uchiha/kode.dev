@@ -26,15 +26,19 @@ export default function Header() {
       <div className="txt">
         <h1 className="text-2xl font-medium font-special">
           Hello{" "}
-          <span className="pl-1 text-black rounded bg-white-100 anime-head">World</span>
+          <span className="pl-1 text-black rounded bg-white-100 anime-head">
+            World
+          </span>
         </h1>
         <p className="my-2 font-regular opacity-80 font-italic text-md">
           I'm a frontend web developer
         </p>
         {/* * Code. Move out */}
         {/* * Edit only one line */}
-        <Tooltip open={inputActive}>{funcVar} <span className="text-blue">(Check the console)</span></Tooltip>
         <div className="px-10 py-5 rounded-lg code-area font-code bg-white-20 w-30 font-light relative">
+          <Tooltip open={inputActive}>
+            {funcVar} <span className="text-blue">(Check the console)</span>
+          </Tooltip>
           <div className={`${inputActive ? "blur-self" : ""} text`}>
             <span className="italic opacity-50">// function decleration</span>{" "}
             <br />
@@ -79,12 +83,17 @@ export default function Header() {
           Need my help on a project?
         </p>
         {/* pur color */}
-        <Button text="Reach Out" alt="Contact me" href="#reach-out" scroll={true} />
+        <Button
+          text="Reach Out"
+          alt="Contact me"
+          href="#reach-out"
+          scroll={true}
+        />
       </div>
       <div className="hero pr-5 relative">
         {/* <Cube /> */}
         <Box />
-        
+
         <Image
           src="/hero/js.png"
           width={120}
