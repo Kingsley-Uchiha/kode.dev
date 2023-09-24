@@ -5,6 +5,7 @@ import { useState } from "react";
 import Button from "../button/page";
 import Cube from "../cube/page";
 import Tooltip from "../tooltip/page";
+import Box from "../box/page";
 
 
 export default function Header() {
@@ -21,7 +22,7 @@ export default function Header() {
   }
 
   return (
-    <header className="flex items-center justify-between p-20 pt-32">
+    <header className="flex items-center justify-between p-20 pt-32 pr-20">
       <div className="txt">
         <h1 className="text-2xl font-medium font-special">
           Hello{" "}
@@ -32,7 +33,7 @@ export default function Header() {
         </p>
         {/* * Code. Move out */}
         {/* * Edit only one line */}
-        <Tooltip>I am a Tooltip</Tooltip>
+        <Tooltip open={inputActive}>{funcVar} <span className="text-blue">(Check the console)</span></Tooltip>
         <div className="px-10 py-5 rounded-lg code-area font-code bg-white-20 w-30 font-light relative">
           <div className={`${inputActive ? "blur-self" : ""} text`}>
             <span className="italic opacity-50">// function decleration</span>{" "}
@@ -81,7 +82,8 @@ export default function Header() {
         <Button text="Reach Out" alt="Contact me" href="#reach-out" scroll={true} />
       </div>
       <div className="hero pr-5 relative">
-        <Cube />
+        {/* <Cube /> */}
+        <Box />
         
         <Image
           src="/hero/js.png"
