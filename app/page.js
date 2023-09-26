@@ -11,6 +11,7 @@ import Quote from '@/components/quote/page';
 import ReachOut from '@/components/reach out/page';
 import Skills from '@/components/skills/page';
 import { useEffect, useState } from 'react'
+import anime from 'animejs';
 // import Image from 'next/image'
 // * Project stars
 
@@ -19,6 +20,8 @@ export default function Home() {
   setTimeout(() => {
     setLoading(false);
   }, 3000);
+
+  const colors = ["#ff3ead", "#61b0ff", "#ffe000"];
   return (
     <main className='relative'>
       {loading && <Loader />}

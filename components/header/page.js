@@ -36,7 +36,7 @@ export default function Header() {
         {/* * Code. Move out */}
         {/* * Edit only one line */}
         <div className="px-10 py-5 rounded-lg code-area font-code bg-white-20 w-30 font-light relative">
-          <Tooltip open={inputActive}>
+          <Tooltip open={!inputActive}>
             {funcVar} <span className="text-blue">(Check the console)</span>
           </Tooltip>
           <div className={`${inputActive ? "blur-self" : ""} text`}>
@@ -70,6 +70,7 @@ export default function Header() {
             />
           </button>
           <input
+            autoFocus
             type="text"
             value={funcVar}
             onChange={(e) => setFuncVar(e.target.value)}

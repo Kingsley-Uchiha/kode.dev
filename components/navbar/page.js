@@ -6,7 +6,7 @@ export default function Navbar() {
   const [openNav, setOpenNav] = useState(false);
 
   return (
-    <div className="navbar bg-black fixed z-10">
+    <div className="navbar bg-black fixed z-50">
       <nav className={`nav border-b-2 flex justify-between items-center`}>
         <div className="logo flex items-baseline">
           <Image
