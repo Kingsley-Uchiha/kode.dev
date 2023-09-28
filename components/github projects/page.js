@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { Octokit } from "octokit";
-import axios from "axios";
+// import axios from "axios";
 
 export default async function GithubProjects() {
   const baseURL = "https://api.github.com";
