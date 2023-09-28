@@ -1,21 +1,29 @@
-import Link from 'next/link';
-import Image from 'next/image';
-import { useState } from "react";
-import emailjs from '@emailjs/browser';
+"use client";
 
+import Link from "next/link";
+import Image from "next/image";
+import { useState } from "react";
+import emailjs from "@emailjs/browser";
 
 export default function ReachOut() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [msgSent, setMsgSent] = useState(false);
 
-  const sendEmail = e => {
+  const sentMsg = () => {
+    setMsgSent(true);
+    setTimeout(() => {
+      setMsgSent(false);
+    }, 1500);
+  };
+  const sendEmail = (e) => {
     e.preventDefault();
     const myEmail = {
       name,
       email,
-      message
-    }
+      message,
+    };
 
     emailjs
       .send(
@@ -28,13 +36,14 @@ export default function ReachOut() {
         (result) => {
           console.log(result.status, result.text);
           console.log(process.env);
+          sentMsg();
         },
         (error) => {
           console.log(error);
           console.log(process.env);
         }
       );
-  }
+  };
 
   return (
     <div className="px-20 py-10" id="reach-out">
@@ -171,8 +180,12 @@ export default function ReachOut() {
               className="w-3/4 py-1 px-2 bg-white-20 rounded-md outline-none resize-none border-none font-thin text-md"
             ></textarea>
           </div>
-          <button className="outline-none bg-white-20 text-white font-thin py-2 px-8 rounded-md absolute right-5 form-submit backdrop-blur-md">
-            Send &gt;
+          <button
+            className={`${
+              msgSent && "disabled:"
+            } outline-none bg-white-20 text-white font-thin py-2 px-8 rounded-md absolute right-5 form-submit backdrop-blur-md`}
+          >
+            {msgSent ? "Sent ☑️" : "Send >"}
           </button>
         </form>
       </div>

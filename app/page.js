@@ -1,4 +1,4 @@
-"use client"
+// "use client"
 
 import Bio from '@/components/bio/page';
 import Footer from '@/components/footer/page';
@@ -10,21 +10,20 @@ import Projects from '@/components/projects/page';
 import Quote from '@/components/quote/page';
 import ReachOut from '@/components/reach out/page';
 import Skills from '@/components/skills/page';
-import { useEffect, useState } from 'react'
-import anime from 'animejs';
+// import { useEffect, useState } from 'react'
 // import Image from 'next/image'
 // * Project stars
 
 export default function Home() {
-  const [loading, setLoading] = useState(true)
-  setTimeout(() => {
-    setLoading(false);
-  }, 3000);
+  // const [loading, setLoading] = useState(true)
+  // setTimeout(() => {
+  //   setLoading(false);
+  // }, 1500);
 
   const colors = ["#ff3ead", "#61b0ff", "#ffe000"];
   return (
     <main className='relative'>
-      {loading && <Loader />}
+      {/* {loading && <Loader />} */}
       <Navbar />
       <Header />
       <GithubProjects />

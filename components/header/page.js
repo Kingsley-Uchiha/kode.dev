@@ -1,12 +1,12 @@
-// "use client"
+"use client"
 
 import Image from "next/image";
 import { useState } from "react";
 import Button from "../button/page";
-import Cube from "../cube/page";
+// import Cube from "../cube/page";
 import Tooltip from "../tooltip/page";
 import Box from "../box/page";
-
+import anime from 'animejs';
 
 export default function Header() {
 
@@ -70,6 +70,7 @@ export default function Header() {
             />
           </button>
           <input
+            name="log variable"
             autoFocus
             type="text"
             value={funcVar}

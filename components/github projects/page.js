@@ -1,8 +1,38 @@
 import Link from 'next/link';
 import { Octokit } from "octokit";
+import axios from "axios";
 
-export default function GithubProjects() {
-  
+export default async function GithubProjects() {
+  const baseURL = "https://api.github.com";
+  const octokit = new Octokit({
+    auth: process.env.NEXT_PUBLIC_ACCESS_TOKEN,
+  });
+  const data = await octokit.request(`GET /user/repos`, {
+    headers: {
+      "X-GitHub-Api-Version": "2022-11-28",
+      authorization: process.env.NEXT_PUBLIC_ACCESS_TOKEN,
+    },
+    baseUrl: baseURL,
+    per_page: 3,
+    sort: "pushed",
+    page: 1,
+  });
+  console.log(data);
+  // const options = {
+  //   method: "GET",
+  //   url: "https://api.github.com/user/repos?per_page=3&sort=pushed",
+  //   headers: {
+  //     Authorization: `Bearer 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`,
+  //   },
+  // };
+
+  // try {
+  //   const { data } = await axios.request(options);
+  //   console.log(data);
+  // } catch (error) {
+  //   console.error(error);
+  // }
+
   return (
     <div className="github-repos p-20">
       <div className="top-bar flex gap-8 items-center">
@@ -23,9 +53,7 @@ export default function GithubProjects() {
           <div className="repo bg-gold w-full h-56 rounded-md"></div>
           <div className="repo bg-pink w-full h-56 rounded-md"></div>
         </div>
-        <button className="text-blue underline font-regular">
-          see more
-        </button>
+        <button className="text-blue underline font-regular">see more</button>
       </div>
     </div>
   );

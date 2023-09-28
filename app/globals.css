@@ -41,11 +41,11 @@ body {
 }
 
 .load {
-  animation: load 3s linear .2s 1 forwards;
+  animation: load 1.5s linear .2s 1 forwards;
 }
 
 .loaded {
-  animation: loaded .3s ease-out 3.2s 1 forwards;
+  animation: loaded .3s ease-out 1.7s 1 forwards;
   font-style: italic;
 }
 

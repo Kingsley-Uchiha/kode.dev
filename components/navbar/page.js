@@ -1,6 +1,8 @@
-import Image from 'next/image';
-import { useState } from 'react';
-import NavPage from '../navpage/page';
+"use client";
+
+import Image from "next/image";
+import { useState } from "react";
+import NavPage from "../navpage/page";
 
 export default function Navbar() {
   const [openNav, setOpenNav] = useState(false);
