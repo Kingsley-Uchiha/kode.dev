@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import { Octokit } from "octokit";
-// import axios from "axios";
 
 export default async function GithubProjects() {
   const baseURL = "https://api.github.com";
@@ -18,20 +17,6 @@ export default async function GithubProjects() {
     page: 1,
   });
   console.log(data);
-  // const options = {
-  //   method: "GET",
-  //   url: "https://api.github.com/user/repos?per_page=3&sort=pushed",
-  //   headers: {
-  //     Authorization: `Bearer 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`,
-  //   },
-  // };
-
-  // try {
-  //   const { data } = await axios.request(options);
-  //   console.log(data);
-  // } catch (error) {
-  //   console.error(error);
-  // }
 
   return (
     <div className="github-repos p-20">
