@@ -18,7 +18,7 @@ export default async function GithubProjects() {
   });
   console.log(data);
 
-  return (
+  return ( 
     <div className="github-repos p-20">
       <div className="top-bar flex gap-8 items-center">
         <Link
