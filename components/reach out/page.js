@@ -12,6 +12,9 @@ export default function ReachOut() {
   const [msgSent, setMsgSent] = useState(false);
 
   const sentMsg = () => {
+    setName("");
+    setEmail("");
+    setMessage("");
     setMsgSent(true);
     setTimeout(() => {
       setMsgSent(false);

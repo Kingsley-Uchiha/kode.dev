@@ -16,9 +16,10 @@ export default async function GithubProjects() {
     sort: "pushed",
     page: 1,
   });
-  console.log(data);
+  console.log(data.data[0]);
+  const repos = data.data;
 
-  return ( 
+  return (
     <div className="github-repos p-20">
       <div className="top-bar flex gap-8 items-center">
         <Link
@@ -34,9 +35,24 @@ export default async function GithubProjects() {
       </div>
       <div className="tab flex flex-col items-end gap-3 my-4 px-8 py-5 bg-white-20 rounded-b-lg rounded-r-lg">
         <div className="repos flex justify-between w-full gap-5">
-          <div className="repo bg-blue w-full h-56 rounded-md"></div>
+          {repos.map((repo) => (
+            <Link href={repo.html_url} target="blank" className="block w-full">
+              <div className="repo bg-white-20 py-4 px-8 border-pink w-full h-56 rounded-md relative">
+                <h1 className='font-bold text-lg'>{repo.name}</h1>
+                <h3 className='underline'>{repo.full_name}</h3>
+                <Link
+                  href={repo.languages_url}
+                  target="blank"
+                  className="absolute bottom-0 right-0 p-4 text-gold"
+                >
+                  {repo.language}
+                </Link>
+              </div>
+            </Link>
+          ))}
+          {/* <div className="repo bg-blue w-full h-56 rounded-md"></div>
           <div className="repo bg-gold w-full h-56 rounded-md"></div>
-          <div className="repo bg-pink w-full h-56 rounded-md"></div>
+          <div className="repo bg-pink w-full h-56 rounded-md"></div> */}
         </div>
         <button className="text-blue underline font-regular">see more</button>
       </div>
