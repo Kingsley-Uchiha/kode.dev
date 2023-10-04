@@ -84,7 +84,7 @@ export default function Skills() {
     },
   };
 
-  window.addEventListener("scroll", () => setActiveImg());
+  document.addEventListener("scroll", () => setActiveImg());
 
   return (
     <div
