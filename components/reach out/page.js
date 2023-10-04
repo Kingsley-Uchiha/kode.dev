@@ -9,19 +9,29 @@ export default function ReachOut() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
-  const [msgSent, setMsgSent] = useState(false);
+  const [msgSent, setMsgSent] = useState("");
 
   const sentMsg = () => {
     setName("");
     setEmail("");
     setMessage("");
-    setMsgSent(true);
+    setMsgSent("sent");
     setTimeout(() => {
-      setMsgSent(false);
+      setMsgSent("");
     }, 1500);
   };
+  const sendFailed = () => {
+    setMsgSent("failed");
+    setTimeout(() => {
+      setMsgSent("");
+    }, 1500);
+  }
   const sendEmail = (e) => {
     e.preventDefault();
+    if (name == "" || email == "" || message == "") {
+      sendFailed();
+      return;
+    }
     const myEmail = {
       name,
       email,
@@ -38,12 +48,11 @@ export default function ReachOut() {
       .then(
         (result) => {
           console.log(result.status, result.text);
-          console.log(process.env);
           sentMsg();
         },
         (error) => {
           console.log(error);
-          console.log(process.env);
+          sendFailed();
         }
       );
   };
@@ -188,8 +197,14 @@ export default function ReachOut() {
               msgSent && "disabled:"
             } outline-none bg-white-20 text-white font-thin py-2 px-8 rounded-md absolute right-5 form-submit backdrop-blur-md`}
           >
-            {msgSent ? "Sent ☑️" : "Send >"}
+            Send &gt;
           </button>
+          {msgSent == "failed" && <div className="failed rounded-md bg-black border-pink border-1 font-code px-3 py-2 inline absolute z-10 font-light right-0 -translate-y-1/3">
+            Failed to send message, try again
+          </div>}
+          {msgSent == "sent" && <div className="failed rounded-md bg-black border-blue border-1 font-code px-3 py-2 inline absolute z-10 font-light right-0 -translate-y-1/3">
+            Successfully sent message
+          </div>}
         </form>
       </div>
     </div>

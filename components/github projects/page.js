@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { Octokit } from "octokit";
 
 export default async function GithubProjects() {
@@ -16,7 +17,7 @@ export default async function GithubProjects() {
     sort: "pushed",
     page: 1,
   });
-  console.log(data.data[0]);
+  // console.log(data.data[0]);
   const repos = data.data;
 
   return (
@@ -33,26 +34,35 @@ export default async function GithubProjects() {
           // my github projects
         </div>
       </div>
-      <div className="tab flex flex-col items-end gap-3 my-4 px-8 py-5 bg-white-20 rounded-b-lg rounded-r-lg">
+      <div className="tab flex border-2-border-pink flex-col items-end gap-3 my-4 px-8 py-5 bg-white-20 rounded-b-lg rounded-r-lg">
         <div className="repos flex justify-between w-full gap-5">
           {repos.map((repo) => (
-            <Link href={repo.html_url} target="blank" className="block w-full">
+            <Link
+              key={repo.id}
+              href={repo.html_url}
+              target="blank"
+              className="block w-full relative"
+            >
               <div className="repo bg-white-20 py-4 px-8 border-pink w-full h-56 rounded-md relative">
-                <h1 className='font-bold text-lg'>{repo.name}</h1>
-                <h3 className='underline'>{repo.full_name}</h3>
+                <h1 className="font-bold text-lg">{repo.name}</h1>
+                <h3 className="font-code italic opacity-50">
+                  {repo.full_name}
+                </h3>
                 <Link
                   href={repo.languages_url}
                   target="blank"
                   className="absolute bottom-0 right-0 p-4 text-gold"
                 >
-                  {repo.language}
+                  <Image
+                    src={`/langs/lang ${repo.language.toLowerCase()}.png`}
+                    width={40}
+                    height={40}
+                  />
                 </Link>
               </div>
+              <Image className='absolute bottom-0 left-0 right-0 w-full' src="/langs/repo bg.png" width={300} height={270} />
             </Link>
           ))}
-          {/* <div className="repo bg-blue w-full h-56 rounded-md"></div>
-          <div className="repo bg-gold w-full h-56 rounded-md"></div>
-          <div className="repo bg-pink w-full h-56 rounded-md"></div> */}
         </div>
         <button className="text-blue underline font-regular">see more</button>
       </div>

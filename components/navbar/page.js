@@ -12,7 +12,7 @@ export default function Navbar() {
       <nav className={`nav border-b-2 flex justify-between items-center`}>
         <div className="logo flex items-baseline">
           <Image
-            src="/white logo.png"
+            src="/logo.png"
             width={50}
             height={50}
             quality={100}
