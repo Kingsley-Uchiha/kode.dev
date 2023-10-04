@@ -8,6 +8,7 @@ import Loader from '@/components/loader/page'
 import Navbar from '@/components/navbar/page';
 import Projects from '@/components/projects/page';
 import Quote from '@/components/quote/page';
+import Rate from '@/components/rate/page';
 import ReachOut from '@/components/reach out/page';
 import Skills from '@/components/skills/page';
 // import { useEffect, useState } from 'react'
@@ -21,6 +22,7 @@ export default function Home() {
   // }, 1500);
 
   const colors = ["#ff3ead", "#61b0ff", "#ffe000"];
+  const review = () => {}
   return (
     <main className='relative'>
       {/* {loading && <Loader />} */}
@@ -33,6 +35,7 @@ export default function Home() {
       <Projects />
       <ReachOut />
       <Footer />
+      {/* <Rate /> */}
       {/* 
       //   <div className="z-10 items-center justify-between w-full max-w-5xl font-mono text-sm lg:flex">
       //         className="flex gap-2 p-8 pointer-events-none place-items-center lg:pointer-events-auto lg:p-0"

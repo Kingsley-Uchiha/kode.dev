@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import Image from "next/image";
 import { useState } from "react";
@@ -9,17 +9,16 @@ import Box from "../box/page";
 // import anime from 'animejs';
 
 export default function Header() {
-
   const [funcVar, setFuncVar] = useState("Try edit me!");
   const [inputActive, setInputActive] = useState(false);
 
   const editCode = () => {
     setInputActive(!inputActive);
     runCode(funcVar);
-  }
+  };
   const runCode = (log) => {
-    if(inputActive) console.log(log);
-  }
+    if (inputActive) console.log(log);
+  };
 
   return (
     <header className="flex items-center justify-between p-20 pt-32 pr-20">
@@ -95,6 +94,13 @@ export default function Header() {
       <div className="hero pr-5 relative">
         {/* <Cube /> */}
         <Box />
+        {/* <Image
+          src="/emoji/hero.png"
+          width={200}
+          height={200}
+          alt="Mind Blown!"
+          className="emoji right-1/3 z-30 relative -bottom-28"
+        /> */}
 
         <Image
           src="/hero/js.png"
@@ -102,7 +108,7 @@ export default function Header() {
           height={120}
           priority
           quality={100}
-          className="absolute js"
+          className="absolute js opacity-0"
           alt="Programming languages"
         />
         <Image
@@ -111,7 +117,7 @@ export default function Header() {
           height={120}
           priority
           quality={100}
-          className="absolute html"
+          className="absolute html opacity-0"
           alt="Programming languages"
         />
         <Image
@@ -120,7 +126,7 @@ export default function Header() {
           height={120}
           priority
           quality={100}
-          className="absolute css"
+          className="absolute css opacity-0"
           alt="Programming languages"
         />
       </div>

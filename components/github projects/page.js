@@ -7,7 +7,7 @@ export default async function GithubProjects() {
   const octokit = new Octokit({
     auth: process.env.NEXT_PUBLIC_ACCESS_TOKEN,
   });
-  const data = await octokit.request(`GET /user/repos`, {
+  const data = await octokit.request(`GET /user/repos`, { // * revalidate
     headers: {
       "X-GitHub-Api-Version": "2022-11-28",
       authorization: process.env.NEXT_PUBLIC_ACCESS_TOKEN,

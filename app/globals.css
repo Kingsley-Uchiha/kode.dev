@@ -211,14 +211,6 @@ body::-webkit-scrollbar-track {
   height: 400px;
 }
 
-.hero {
-  position: relative;
-}
-
-.hero .absolute {
-  opacity: 0;
-}
-
 .blur-self {
   filter: blur(6px);
 }
