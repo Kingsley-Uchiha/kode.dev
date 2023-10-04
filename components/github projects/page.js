@@ -2,7 +2,8 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Octokit } from "octokit";
 
-export const revalidate = 3600 // revalidate at most every hour
+// * export const revalidate = 3600 // revalidate at most every hour
+// * fetch("https://...", { next: { revalidate: 3600 } });
 
 export default async function GithubProjects() {
   const baseURL = "https://api.github.com";
