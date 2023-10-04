@@ -84,8 +84,6 @@ export default function Skills() {
     },
   };
 
-  document.addEventListener("scroll", () => setActiveImg());
-
   return (
     <div
       className="px-20 py-10 skills relative"
