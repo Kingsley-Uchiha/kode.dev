@@ -9,6 +9,11 @@ export default async function GithubProjects() {
   const baseURL = "https://api.github.com";
   const octokit = new Octokit({
     auth: process.env.NEXT_PUBLIC_ACCESS_TOKEN,
+    request: {
+      agent: undefined,
+      fetch: undefined,
+      timeout: 3600,
+    },
   });
   const data = await octokit.request(`GET /user/repos`, { // * revalidate
     headers: {
