@@ -13,6 +13,7 @@ export default async function GithubProjects() {
       agent: undefined,
       fetch: undefined,
       timeout: 3600,
+      revalidate: 3600,
     },
   });
   const data = await octokit.request(`GET /user/repos`, { // * revalidate
