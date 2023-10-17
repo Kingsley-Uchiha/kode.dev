@@ -65,7 +65,7 @@ export default async function GithubProjects() {
                   className="absolute bottom-0 right-0 p-4 text-gold"
                 >
                   <Image
-                    src={`/langs/lang ${repo.language}.png`}
+                    src={`/langs/lang ${repo.language/*.toLowerCase()*/}.png`}
                     width={40}
                     height={40}
                   />
