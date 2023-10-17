@@ -57,7 +57,7 @@ export default async function GithubProjects() {
                 <h3 className="font-code italic opacity-50">
                   {repo.full_name}
                 </h3>
-                {repo.languages_url && <Link
+                {repo.language && <Link
                   href={repo.languages_url}
                   target="blank"
                   className="absolute bottom-0 right-0 p-4 text-gold"
