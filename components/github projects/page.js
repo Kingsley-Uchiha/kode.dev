@@ -45,7 +45,9 @@ export default async function GithubProjects() {
       </div>
       <div className="tab flex border-2-border-pink flex-col items-end gap-3 my-4 px-8 py-5 bg-white-20 rounded-b-lg rounded-r-lg">
         <div className="repos flex justify-between w-full gap-5">
-          {repos.map((repo) => (
+          {repos.map((repo) => {
+            console.log(repo.language);
+            return (
             <Link
               key={repo.id}
               href={repo.html_url}
@@ -71,7 +73,7 @@ export default async function GithubProjects() {
               </div>
               <Image className='absolute bottom-0 left-0 right-0 w-full' src="/langs/repo bg.png" width={300} height={270} />
             </Link>
-          ))}
+          )})}
         </div>
         <button className="text-blue underline font-regular">see more</button>
       </div>
